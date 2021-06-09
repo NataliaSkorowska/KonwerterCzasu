@@ -12,9 +12,12 @@ namespace KonwerterCzasu
 {
     public partial class Form1 : Form
     {
+
+       
         public Form1()
         {
             InitializeComponent();
+           
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
@@ -382,233 +385,245 @@ namespace KonwerterCzasu
 
         private void button1_Click(object sender, EventArgs e)
         {
-            double result = 0;
-
-            if (textBox1.Text == "" || Convert.ToDouble(textBox1.Text) < 0)
-            {
-                MessageBox.Show("Należy wpisać liczbę, która będzie większa od zera");
-            }
-            else
-            {
+            double result = 0;               
+            
                 try
-                {
-                    double x = Convert.ToDouble(textBox1.Text);
+                { 
+                
+                double x = Convert.ToDouble(textBox1.Text);
 
-                    if (comboBox1.SelectedIndex == 0 && comboBox2.SelectedIndex == 0)
-                    {
-                        result = SekundyNaSekundy(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 0 && comboBox2.SelectedIndex == 1)
-                    {
-                        result = SekundyNaMinuty(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 0 && comboBox2.SelectedIndex == 2)
-                    {
-                        result = SekundyNaGodziny(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 0 && comboBox2.SelectedIndex == 3)
-                    {
-                        result = SekundyNaDni(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 0 && comboBox2.SelectedIndex == 4)
-                    {
-                        result = SekundyNaTygodnie(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 0 && comboBox2.SelectedIndex == 5)
-                    {
-                        result = SekundyNaMiesiace(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 0 && comboBox2.SelectedIndex == 6)
-                    {
-                        result = SekundyNaLata(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 1 && comboBox2.SelectedIndex == 0)
-                    {
-                        result = MinutyNaSekundy(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 1 && comboBox2.SelectedIndex == 1)
-                    {
-                        result = MinutyNaMinuty(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 1 && comboBox2.SelectedIndex == 2)
-                    {
-                        result = MinutyNaGodziny(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 1 && comboBox2.SelectedIndex == 3)
-                    {
-                        result = MinutyNaDni(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 1 && comboBox2.SelectedIndex == 4)
-                    {
-                        result = MinutyNaTygodnie(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 1 && comboBox2.SelectedIndex == 5)
-                    {
-                        result = MinutyNaMiesiace(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 1 && comboBox2.SelectedIndex == 6)
-                    {
-                        result = MinutyNaLata(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 2 && comboBox2.SelectedIndex == 0)
-                    {
-                        result = GodzinyNaSekundy(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 2 && comboBox2.SelectedIndex == 1)
-                    {
-                        result = GodzinyNaMinuty(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 2 && comboBox2.SelectedIndex == 2)
-                    {
-                        result = GodzinyNaGodziny(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 2 && comboBox2.SelectedIndex == 3)
-                    {
-                        result = GodzinyNaDni(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 2 && comboBox2.SelectedIndex == 4)
-                    {
-                        result = GodzinyNaTygodnie(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 2 && comboBox2.SelectedIndex == 5)
-                    {
-                        result = GodzinyNaMiesiace(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 2 && comboBox2.SelectedIndex == 6)
-                    {
-                        result = GodzinyNaLata(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 3 && comboBox2.SelectedIndex == 0)
-                    {
-                        result = DniNaSekundy(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 3 && comboBox2.SelectedIndex == 1)
-                    {
-                        result = DniNaMinuty(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 3 && comboBox2.SelectedIndex == 2)
-                    {
-                        result = DniNaGodziny(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 3 && comboBox2.SelectedIndex == 3)
-                    {
-                        result = DniNaDni(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 3 && comboBox2.SelectedIndex == 4)
-                    {
-                        result = DniNaTygodnie(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 3 && comboBox2.SelectedIndex == 5)
-                    {
-                        result = DniNaMiesiace(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 3 && comboBox2.SelectedIndex == 6)
-                    {
-                        result = DniNaLata(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 4 && comboBox2.SelectedIndex == 0)
-                    {
-                        result = TygodnieNaSekundy(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 4 && comboBox2.SelectedIndex == 1)
-                    {
-                        result = TygodnieNaMinuty(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 4 && comboBox2.SelectedIndex == 2)
-                    {
-                        result = TygodnieNaGodziny(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 4 && comboBox2.SelectedIndex == 3)
-                    {
-                        result = TygodnieNaDni(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 4 && comboBox2.SelectedIndex == 4)
-                    {
-                        result = TygodnieNaTygodnie(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 4 && comboBox2.SelectedIndex == 5)
-                    {
-                        result = TygodnieNaMiesiace(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 4 && comboBox2.SelectedIndex == 6)
-                    {
-                        result = TygodnieNaLata(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 5 && comboBox2.SelectedIndex == 0)
-                    {
-                        result = MiesiaceNaSekundy(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 5 && comboBox2.SelectedIndex == 1)
-                    {
-                        result = MiesiaceNaMinuty(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 5 && comboBox2.SelectedIndex == 2)
-                    {
-                        result = MiesiaceNaGodziny(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 5 && comboBox2.SelectedIndex == 3)
-                    {
-                        result = MiesiaceNaDni(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 5 && comboBox2.SelectedIndex == 4)
-                    {
-                        result = MiesiaceNaTygodnie(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 5 && comboBox2.SelectedIndex == 5)
-                    {
-                        result = MiesiaceNaMiesiace(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 5 && comboBox2.SelectedIndex == 6)
-                    {
-                        result = MiesiaceNaLata(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 6 && comboBox2.SelectedIndex == 0)
-                    {
-                        result = LataNaSekundy(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 6 && comboBox2.SelectedIndex == 1)
-                    {
-                        result = LataNaMinuty(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 6 && comboBox2.SelectedIndex == 2)
-                    {
-                        result = LataNaGodziny(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 6 && comboBox2.SelectedIndex == 3)
-                    {
-                        result = LataNaDni(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 6 && comboBox2.SelectedIndex == 4)
-                    {
-                        result = LataNaTygodnie(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 6 && comboBox2.SelectedIndex == 5)
-                    {
-                        result = LataNaMiesiace(x);
-                    }
-                    else if (comboBox1.SelectedIndex == 6 && comboBox2.SelectedIndex == 6)
-                    {
-                        result =LataNaLata(x);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Wybierz jednostki czasu!");
-                    }
+
+                if (textBox1.Text == "" || Convert.ToDouble(textBox1.Text) < 0)
+                {
+                    MessageBox.Show("Należy wpisać liczbę, która będzie większa od zera");
                 }
+
+                else if (comboBox1.SelectedIndex == 0 && comboBox2.SelectedIndex == 0)
+                {
+                    result = SekundyNaSekundy(x);
+                }
+                else if (comboBox1.SelectedIndex == 0 && comboBox2.SelectedIndex == 1)
+                {
+                    result = SekundyNaMinuty(x);
+                }
+                else if (comboBox1.SelectedIndex == 0 && comboBox2.SelectedIndex == 2)
+                {
+                    result = SekundyNaGodziny(x);
+                }
+                else if (comboBox1.SelectedIndex == 0 && comboBox2.SelectedIndex == 3)
+                {
+                    result = SekundyNaDni(x);
+                }
+                else if (comboBox1.SelectedIndex == 0 && comboBox2.SelectedIndex == 4)
+                {
+                    result = SekundyNaTygodnie(x);
+                }
+                else if (comboBox1.SelectedIndex == 0 && comboBox2.SelectedIndex == 5)
+                {
+                    result = SekundyNaMiesiace(x);
+                }
+                else if (comboBox1.SelectedIndex == 0 && comboBox2.SelectedIndex == 6)
+                {
+                    result = SekundyNaLata(x);
+                }
+                else if (comboBox1.SelectedIndex == 1 && comboBox2.SelectedIndex == 0)
+                {
+                    result = MinutyNaSekundy(x);
+                }
+                else if (comboBox1.SelectedIndex == 1 && comboBox2.SelectedIndex == 1)
+                {
+                    result = MinutyNaMinuty(x);
+                }
+                else if (comboBox1.SelectedIndex == 1 && comboBox2.SelectedIndex == 2)
+                {
+                    result = MinutyNaGodziny(x);
+                }
+                else if (comboBox1.SelectedIndex == 1 && comboBox2.SelectedIndex == 3)
+                {
+                    result = MinutyNaDni(x);
+                }
+                else if (comboBox1.SelectedIndex == 1 && comboBox2.SelectedIndex == 4)
+                {
+                    result = MinutyNaTygodnie(x);
+                }
+                else if (comboBox1.SelectedIndex == 1 && comboBox2.SelectedIndex == 5)
+                {
+                    result = MinutyNaMiesiace(x);
+                }
+                else if (comboBox1.SelectedIndex == 1 && comboBox2.SelectedIndex == 6)
+                {
+                    result = MinutyNaLata(x);
+                }
+                else if (comboBox1.SelectedIndex == 2 && comboBox2.SelectedIndex == 0)
+                {
+                    result = GodzinyNaSekundy(x);
+                }
+                else if (comboBox1.SelectedIndex == 2 && comboBox2.SelectedIndex == 1)
+                {
+                    result = GodzinyNaMinuty(x);
+                }
+                else if (comboBox1.SelectedIndex == 2 && comboBox2.SelectedIndex == 2)
+                {
+                    result = GodzinyNaGodziny(x);
+                }
+                else if (comboBox1.SelectedIndex == 2 && comboBox2.SelectedIndex == 3)
+                {
+                    result = GodzinyNaDni(x);
+                }
+                else if (comboBox1.SelectedIndex == 2 && comboBox2.SelectedIndex == 4)
+                {
+                    result = GodzinyNaTygodnie(x);
+                }
+                else if (comboBox1.SelectedIndex == 2 && comboBox2.SelectedIndex == 5)
+                {
+                    result = GodzinyNaMiesiace(x);
+                }
+                else if (comboBox1.SelectedIndex == 2 && comboBox2.SelectedIndex == 6)
+                {
+                    result = GodzinyNaLata(x);
+                }
+                else if (comboBox1.SelectedIndex == 3 && comboBox2.SelectedIndex == 0)
+                {
+                    result = DniNaSekundy(x);
+                }
+                else if (comboBox1.SelectedIndex == 3 && comboBox2.SelectedIndex == 1)
+                {
+                    result = DniNaMinuty(x);
+                }
+                else if (comboBox1.SelectedIndex == 3 && comboBox2.SelectedIndex == 2)
+                {
+                    result = DniNaGodziny(x);
+                }
+                else if (comboBox1.SelectedIndex == 3 && comboBox2.SelectedIndex == 3)
+                {
+                    result = DniNaDni(x);
+                }
+                else if (comboBox1.SelectedIndex == 3 && comboBox2.SelectedIndex == 4)
+                {
+                    result = DniNaTygodnie(x);
+                }
+                else if (comboBox1.SelectedIndex == 3 && comboBox2.SelectedIndex == 5)
+                {
+                    result = DniNaMiesiace(x);
+                }
+                else if (comboBox1.SelectedIndex == 3 && comboBox2.SelectedIndex == 6)
+                {
+                    result = DniNaLata(x);
+                }
+                else if (comboBox1.SelectedIndex == 4 && comboBox2.SelectedIndex == 0)
+                {
+                    result = TygodnieNaSekundy(x);
+                }
+                else if (comboBox1.SelectedIndex == 4 && comboBox2.SelectedIndex == 1)
+                {
+                    result = TygodnieNaMinuty(x);
+                }
+                else if (comboBox1.SelectedIndex == 4 && comboBox2.SelectedIndex == 2)
+                {
+                    result = TygodnieNaGodziny(x);
+                }
+                else if (comboBox1.SelectedIndex == 4 && comboBox2.SelectedIndex == 3)
+                {
+                    result = TygodnieNaDni(x);
+                }
+                else if (comboBox1.SelectedIndex == 4 && comboBox2.SelectedIndex == 4)
+                {
+                    result = TygodnieNaTygodnie(x);
+                }
+                else if (comboBox1.SelectedIndex == 4 && comboBox2.SelectedIndex == 5)
+                {
+                    result = TygodnieNaMiesiace(x);
+                }
+                else if (comboBox1.SelectedIndex == 4 && comboBox2.SelectedIndex == 6)
+                {
+                    result = TygodnieNaLata(x);
+                }
+                else if (comboBox1.SelectedIndex == 5 && comboBox2.SelectedIndex == 0)
+                {
+                    result = MiesiaceNaSekundy(x);
+                }
+                else if (comboBox1.SelectedIndex == 5 && comboBox2.SelectedIndex == 1)
+                {
+                    result = MiesiaceNaMinuty(x);
+                }
+                else if (comboBox1.SelectedIndex == 5 && comboBox2.SelectedIndex == 2)
+                {
+                    result = MiesiaceNaGodziny(x);
+                }
+                else if (comboBox1.SelectedIndex == 5 && comboBox2.SelectedIndex == 3)
+                {
+                    result = MiesiaceNaDni(x);
+                }
+                else if (comboBox1.SelectedIndex == 5 && comboBox2.SelectedIndex == 4)
+                {
+                    result = MiesiaceNaTygodnie(x);
+                }
+                else if (comboBox1.SelectedIndex == 5 && comboBox2.SelectedIndex == 5)
+                {
+                    result = MiesiaceNaMiesiace(x);
+                }
+                else if (comboBox1.SelectedIndex == 5 && comboBox2.SelectedIndex == 6)
+                {
+                    result = MiesiaceNaLata(x);
+                }
+                else if (comboBox1.SelectedIndex == 6 && comboBox2.SelectedIndex == 0)
+                {
+                    result = LataNaSekundy(x);
+                }
+                else if (comboBox1.SelectedIndex == 6 && comboBox2.SelectedIndex == 1)
+                {
+                    result = LataNaMinuty(x);
+                }
+                else if (comboBox1.SelectedIndex == 6 && comboBox2.SelectedIndex == 2)
+                {
+                    result = LataNaGodziny(x);
+                }
+                else if (comboBox1.SelectedIndex == 6 && comboBox2.SelectedIndex == 3)
+                {
+                    result = LataNaDni(x);
+                }
+                else if (comboBox1.SelectedIndex == 6 && comboBox2.SelectedIndex == 4)
+                {
+                    result = LataNaTygodnie(x);
+                }
+                else if (comboBox1.SelectedIndex == 6 && comboBox2.SelectedIndex == 5)
+                {
+                    result = LataNaMiesiace(x);
+                }
+                else if (comboBox1.SelectedIndex == 6 && comboBox2.SelectedIndex == 6)
+                {
+                    result = LataNaLata(x);
+                }
+                else
+                {
+                    MessageBox.Show("Wybierz jednostki czasu!");
+                }
+                }          
+
                 catch (FormatException)
                 {
                     MessageBox.Show("Wpisana wartość nie może być tekstem! ");
                 }
-            }
+
+
             if (result != 0)
             {
                 decimal d = Convert.ToDecimal(result);
                 if (d < 1)
-                    MessageBox.Show( "0" + d.ToString("#.##"));
+                    MessageBox.Show("0" + d.ToString("#.##"));
                 else
                     MessageBox.Show(d.ToString("#.##"));
             }
-        
+
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }
+
+
